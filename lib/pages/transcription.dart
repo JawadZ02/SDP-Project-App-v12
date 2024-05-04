@@ -144,52 +144,128 @@ class TranscriptionPageState extends State<TranscriptionPage> {
     }
 
     List<String> emojis = [];
+
+    // for (String pred in significantPreds) {
+    //   switch (pred) {
+    //     // case 'Silence':
+    //     //   emojis.add('🔇');
+    //     //   break;
+    //     case 'Speech':
+    //     case 'Chatter':
+    //     case 'Crowd':
+    //       emojis.add('🗣️');
+    //       break;
+    //     case 'Cheering':
+    //       emojis.add('🗣️');
+    //       emojis.add('📣');
+    //       break;
+    //     case 'Applause':
+    //       emojis.add('👏');
+    //       break;
+    //     case 'Telephone bell ringing':
+    //     case 'Telephone':
+    //     case 'Train':
+    //     case 'Rail transport':
+    //     case 'Ding':
+    //     case 'Alarm clock':
+    //     case 'Alarm':
+    //       emojis.add('🔔');
+    //       break;
+    //     case '"Vehicle horn':
+    //     case '"Air horn':
+    //       emojis.add('🚗');
+    //       emojis.add('🔊');
+    //       break;
+    //     case 'Vehicle':
+    //       emojis.add('🚗');
+    //       break;
+    //     case 'Bus':
+    //       emojis.add('🚌');
+    //       break;
+    //     case 'Car alarm':
+    //     case 'Siren':
+    //     case '"Beep':
+    //       emojis.add('🚨');
+    //       break;
+    //     case 'Buzzer':
+    //     case 'Cowbell':
+    //     case 'Bagpipes':
+    //     case 'Fire alarm':
+    //     case '"Dental drill':
+    //       emojis.add('🔥');
+    //       emojis.add('🚨');
+    //       break;
+    //     case '"Smoke detector':
+    //       emojis.add('💨');
+    //       emojis.add('🚨');
+    //       break;
+    //     case 'Knock':
+    //       emojis.add('✊');
+    //       emojis.add('🚪');
+    //       break;
+    //     case 'Door':
+    //       emojis.add('🚪');
+    //       break;
+    //     case 'Ringtone':
+    //       emojis.add('📞');
+    //       break;
+    //     case 'Music':
+    //       emojis.add('🎵');
+    //       break;
+    //     case 'Walk, footsteps':
+    //       emojis.add('🚶');
+    //       break;
+    //     case 'Whistle':
+    //     case 'Whistling':
+    //       emojis.add('😙');
+    //       break;
+    //     case 'Tools':
+    //     case 'Drill':
+    //     case 'Power tool':
+    //       emojis.add('🛠️');
+    //       break;
+    //     case 'Sawing':
+    //     case 'Chainsaw':
+    //     case 'Light engine (high frequency)':
+    //       emojis.add('🪚');
+    //       break;
+    //     case 'Hammer':
+    //     case 'Jackhammer':
+    //       emojis.add('🔨');
+    //       break;
+    //     // default:
+    //     //   emojis.add(pred);
+    //   }
+    // }
+
     for (String pred in significantPreds) {
       switch (pred) {
         // case 'Silence':
         //   emojis.add('🔇');
         //   break;
         case 'Speech':
-          emojis.add('🗣️');
-          break;
         case 'Chatter':
-          emojis.add('🗣️');
-          break;
         case 'Crowd':
           emojis.add('🗣️');
           break;
         case 'Cheering':
-          emojis.add('🗣️');
-          emojis.add('📣');
-          break;
         case 'Applause':
-          emojis.add('👏');
+        case 'Clapping':
+        case 'Hands':
+          emojis.add('👏'); // could remove
           break;
         case 'Telephone bell ringing':
-          emojis.add('🔔');
-          break;
         case 'Telephone':
-          emojis.add('🔔');
-          break;
-        case 'Train':
-          emojis.add('🔔');
-          break;
-        case 'Rail transport':
-          emojis.add('🔔');
-          break;
-        case 'Ding':
-          emojis.add('🔔');
-          break;
         case 'Alarm clock':
-          emojis.add('🔔');
-          break;
+        case 'Ringtone':
+          emojis.add('📞');
+        case 'Train':
+        case 'Rail transport':
+        case 'Ding':
         case 'Alarm':
           emojis.add('🔔');
           break;
         case '"Vehicle horn':
-          emojis.add('🚗');
-          emojis.add('🔊');
-          break;
         case '"Air horn':
           emojis.add('🚗');
           emojis.add('🔊');
@@ -198,39 +274,24 @@ class TranscriptionPageState extends State<TranscriptionPage> {
           emojis.add('🚗');
           break;
         case 'Bus':
-          emojis.add('🚌');
+          emojis.add('🚌'); // could remove
           break;
         case 'Car alarm':
-          emojis.add('🚨');
-          break;
         case 'Siren':
-          emojis.add('🚨');
-          break;
         case '"Beep':
+        case '"Smoke detector':
+        case 'Ambulance (Siren)':
+        case 'Police Car (Siren)':
+        case 'Emergency Vehicle':
+        case 'Fog Horn':
           emojis.add('🚨');
           break;
         case 'Buzzer':
-          emojis.add('🔥');
-          emojis.add('🚨');
-          break;
         case 'Cowbell':
-          emojis.add('🔥');
-          emojis.add('🚨');
-          break;
         case 'Bagpipes':
-          emojis.add('🔥');
-          emojis.add('🚨');
-          break;
         case 'Fire alarm':
-          emojis.add('🔥');
-          emojis.add('🚨');
-          break;
         case '"Dental drill':
           emojis.add('🔥');
-          emojis.add('🚨');
-          break;
-        case '"Smoke detector':
-          emojis.add('💨');
           emojis.add('🚨');
           break;
         case 'Knock':
@@ -240,126 +301,35 @@ class TranscriptionPageState extends State<TranscriptionPage> {
         case 'Door':
           emojis.add('🚪');
           break;
-        case 'Ringtone':
-          emojis.add('📞');
-          break;
         case 'Music':
           emojis.add('🎵');
           break;
         case 'Walk, footsteps':
-          emojis.add('🚶');
+          emojis.add('🚶'); // could remove
           break;
         case 'Whistle':
-          emojis.add('😙');
-          break;
         case 'Whistling':
           emojis.add('😙');
           break;
         case 'Tools':
-          emojis.add('🛠️');
-          break;
         case 'Drill':
-          emojis.add('🛠️');
-          break;
         case 'Power tool':
-          emojis.add('🛠️');
-          break;
         case 'Sawing':
-          emojis.add('🪚');
-          break;
         case 'Chainsaw':
-          emojis.add('🪚');
-          break;
         case 'Light engine (high frequency)':
-          emojis.add('🪚');
-          break;
         case 'Hammer':
-          emojis.add('🔨');
-          break;
         case 'Jackhammer':
-          emojis.add('🔨');
+        case 'Ratchet':
+        case 'Wood':
+        case 'Rob Wood':
+        case 'Filing':
+        case 'Scrape':
+          emojis.add('🛠️');
           break;
         // default:
         //   emojis.add(pred);
       }
     }
-
-    // List<String> emojis = [];
-    // for (String pred in significantPreds) {
-    //   switch (pred) {
-    //     // case 'Silence':
-    //     //   emojis.add('🔇');
-    //     //   break;
-    //     case 'Buzzer':
-    //     case 'Fire Alarm':
-    //     case 'Alarm':
-    //     case 'Ding':
-    //       emojis.add('🚨');
-    //       break;
-    //     case 'Knock':
-    //     case 'Door':
-    //     case 'Plop':
-    //       emojis.add('🚪');
-    //       break;
-    //     case 'Speech':
-    //     case 'Crowd':
-    //     case 'Chatter':
-    //       emojis.add('🗣️');
-    //       break;
-    //     case 'Cheering':
-    //     case 'Clapping':
-    //     case 'Hands':
-    //       emojis.add('👏');
-    //       break;
-    //     case 'Telephone Bell Ringing':
-    //     case 'Telephone':
-    //     case 'Alarm Clock':
-    //     case 'Ringtone':
-    //       emojis.add('📞');
-    //       break;
-    //     case 'Vehicle Horn':
-    //     case 'Air Horn':
-    //     case 'Vehicle':
-    //       emojis.add('🚗');
-    //       break;
-    //     case 'Car Alarm':
-    //     case 'Ambulance (Siren)':
-    //     case 'Police Car (Siren)':
-    //     case 'Emergency Vehicle':
-    //     case 'Fog Horn':
-    //     case 'Beep':
-    //     case 'Smoke Detector':
-    //       emojis.add('🚨');
-    //       break;
-    //     case 'Music':
-    //     case 'Ringtone':
-    //       emojis.add('🎵');
-    //       break;
-    //     case 'Whistle':
-    //     case 'Whistling':
-    //       emojis.add('😙');
-    //       break;
-    //     case 'Filing':
-    //     case 'Scrape':
-    //     case 'Tools':
-    //     case 'Rub Wood':
-    //     case 'Ratchet':
-    //     case 'Wood':
-    //     case 'Sawing':
-    //     case 'Chainsaw':
-    //     case 'Jackhammer':
-    //     case 'Hammer':
-    //       emojis.add('🛠️');
-    //       break;
-    //     default:
-    //       emojis.add(
-    //           pred); // Add the prediction itself if it does not match any case
-    //   }
-    // }
-
-    // if (emojis.isEmpty) {
-    //   emojis.add('🔇');
-    // }
 
     List<String> uniqueEmojis = emojis.toSet().toList();
     String emojisToPrint = uniqueEmojis.join(' ');
